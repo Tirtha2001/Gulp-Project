@@ -1,0 +1,49 @@
+
+/** Fade In Left */
+
+@keyframes fadeInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px)
+    }
+    80%{
+        transform: translateX(10px)
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/** Fade In Right */
+
+@keyframes fadeInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px)
+    }
+    80%{
+        transform: translateX(-10px)
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+/** Fade In Up */
+
+@keyframes fadeInUp{
+    0%{
+        opacity: 0;
+        transform: translateY(90px)
+    }
+    80%{
+        transform: translateY(-10px)
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0)
+    }
+}

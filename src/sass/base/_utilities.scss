@@ -1,0 +1,242 @@
+/** ========= UTILITIES ========= */
+
+// /** Text Alignment */
+// .text{
+//     &-center{
+//         text-align: center;
+//     }
+
+//     &-right{
+//         text-align: right;
+//     }
+
+//     &-left{
+//         text-align: left;
+//     }
+// }
+
+// /** Text Decoration */
+// .text-uppercase{
+//     text-transform: uppercase;
+// }
+// .line-through{
+//     text-decoration: line-through;
+// }
+// .text-underline{
+//     text-decoration: underline;
+// }
+
+/** Text Colors */
+.text {
+  @each $name, $color in $theme {
+    &-#{$name} {
+      color: $color !important;
+    }
+  }
+}
+
+/** Margins */
+@for $i from 1 through 10 {
+  .m-#{$i} {
+    margin: (10 * $i) + px !important;
+  }
+  .mb-#{$i} {
+    margin-bottom: (10 * $i) + px !important;
+  }
+  .mt-#{$i} {
+    margin-top: (10 * $i) + px !important;
+  }
+  .ml-#{$i} {
+    margin-left: (10 * $i) + px !important;
+  }
+  .mr-#{$i} {
+    margin-right: (10 * $i) + px !important;
+  }
+  .my-#{$i} {
+    margin-top: (10 * $i) + px !important;
+    margin-bottom: (10 * $i) + px !important;
+  }
+  .mx-#{$i} {
+    margin-right: (10 * $i) + px !important;
+    margin-left: (10 * $i) + px !important;
+  }
+}
+// Mobile
+@include responsive(phone) {
+  @for $i from 1 through 10 {
+    .m-sm-#{$i} {
+      margin: (10 * $i) + px !important;
+    }
+    .mb-sm-#{$i} {
+      margin-bottom: (10 * $i) + px !important;
+    }
+    .mt-sm-#{$i} {
+      margin-top: (10 * $i) + px !important;
+    }
+    .ml-sm-#{$i} {
+      margin-left: (10 * $i) + px !important;
+    }
+    .mr-sm-#{$i} {
+      margin-right: (10 * $i) + px !important;
+    }
+    .my-sm-#{$i} {
+      margin-top: (10 * $i) + px !important;
+      margin-bottom: (10 * $i) + px !important;
+    }
+    .mx-sm-#{$i} {
+      margin-right: (10 * $i) + px !important;
+      margin-left: (10 * $i) + px !important;
+    }
+  }
+}
+
+/** Paddings */
+// General
+@for $i from 1 through 10 {
+  .p-#{$i} {
+    padding: (10 * $i) + px !important;
+  }
+  .pb-#{$i} {
+    padding-bottom: (10 * $i) + px !important;
+  }
+  .pt-#{$i} {
+    padding-top: (10 * $i) + px !important;
+  }
+  .pl-#{$i} {
+    padding-left: (10 * $i) + px !important;
+  }
+  .pr-#{$i} {
+    padding-right: (10 * $i) + px !important;
+  }
+  .py-#{$i} {
+    padding-top: (10 * $i) + px !important;
+    padding-bottom: (10 * $i) + px !important;
+  }
+  .px-#{$i} {
+    padding-right: (10 * $i) + px !important;
+    padding-left: (10 * $i) + px !important;
+  }
+}
+// Mobile
+@include responsive(phone) {
+  @for $i from 1 through 10 {
+    .p-sm-#{$i} {
+      padding: (10 * $i) + px !important;
+    }
+    .pb-sm-#{$i} {
+      padding-bottom: (10 * $i) + px !important;
+    }
+    .pt-sm-#{$i} {
+      padding-top: (10 * $i) + px !important;
+    }
+    .pl-sm-#{$i} {
+      padding-left: (10 * $i) + px !important;
+    }
+    .pr-sm-#{$i} {
+      padding-right: (10 * $i) + px !important;
+    }
+    .py-sm-#{$i} {
+      padding-top: (10 * $i) + px !important;
+      padding-bottom: (10 * $i) + px !important;
+    }
+    .px-sm-#{$i} {
+      padding-right: (10 * $i) + px !important;
+      padding-left: (10 * $i) + px !important;
+    }
+  }
+}
+
+/** Backgrounds */
+.bg {
+  @each $name, $color in $theme {
+    &-#{$name} {
+      background: $color !important;
+    }
+  }
+  &-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    // &.is {
+    //   &-1 {
+    //     background-image: url();
+    //   }
+    // }
+  }
+}
+
+/** Display */
+.d-centered {
+  display: block;
+  margin: auto;
+}
+
+/** Border */
+.border {
+  border: 1px solid $primary;
+  &-light {
+    border-color: $white;
+  }
+  &-top {
+    border-top: 1px solid $primary !important;
+  }
+  @for $i from 1 through 10 {
+    &-#{$i} {
+      border-width: $i * 1px !important;
+    }
+  }
+}
+
+/** Border Radius */
+.br {
+  &-5 {
+    border-radius: 5px !important;
+  }
+  &-10 {
+    border-radius: 10px !important;
+  }
+  &-15 {
+    border-radius: 15px !important;
+  }
+  &-rounded {
+    border-radius: 50px !important;
+  }
+}
+
+/** Shadow */
+.shadow {
+  box-shadow: 0px 5px 15px rgba($black, 0.1) !important;
+  &-sm {
+    box-shadow: 0px 2px 15px rgba($black, 0.1) !important;
+  }
+  &-lg {
+    box-shadow: 0px 10px 15px rgba($black, 0.1) !important;
+  }
+}
+
+/** Image */
+.img {
+  &-responsive {
+    display: block;
+    max-width: 100%;
+  }
+  &-rounded {
+    border-radius: 100%;
+  }
+}
+
+/** Positioning */
+.p {
+  &-relative {
+    position: relative;
+  }
+  &-vCentered {
+    @include vCentered;
+  }
+  &-hCentered {
+    @include hCentered;
+  }
+  &-centered {
+    @include centered;
+  }
+}

@@ -1,0 +1,15 @@
+// List Inline
+%list-inline{
+    display: inline-block;
+    &:not(:last-child){
+        margin-right: 15px;
+    }
+}
+
+// Grid
+%pull-left{
+    float: left;
+}
+%pull-right{
+    float: right;
+}

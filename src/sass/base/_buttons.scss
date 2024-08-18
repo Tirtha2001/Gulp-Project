@@ -1,0 +1,90 @@
+/** ========= BUTTONS ========= */
+/** General */
+.btn{
+    border: 1px solid transparent;
+    padding: 10px 18px;
+    border-radius: 3px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transition: all ease-in-out .25s;
+    &:focus{
+        box-shadow: none;
+    }
+
+    /** Button Type */
+    &-block{
+        display: block;
+        &:not(:last-child){
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+    &-rounded{
+        border-radius: 50px;
+    }
+    &-link{
+        background: transparent;
+        color: $primary;
+    }
+
+    /** Button Size */
+    &-sm{
+        font-size: 11px;
+        padding: 5px 15px;
+    }
+    &-md{
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    &-lg{
+        font-size: 18px;
+        padding: 15px 35px;
+    }
+    /** Button Colors */
+    
+    @each $name, $color in $theme {
+        &-#{$name} {
+            background: $color;
+            color: $white;
+            &:hover{
+                border-color: lighten($color, 10%);
+                background: lighten($color, 10%);
+                color: $white;
+            }
+            @if $color == $white {
+                color: $primary;
+                &:hover{
+                    border-color: lighten($primary, 10%);
+                    background: lighten($primary, 10%);
+                    color: $color;
+                }
+            }
+            @if $color == $gray-100 {
+                color: $gray-400;
+                &:hover{
+                    border-color: lighten($gray-400, 10%);
+                    background: lighten($gray-400, 10%);
+                    color: $color;
+                }
+            }
+        }
+    }
+
+    /** Outline Button */    
+    &-outline{
+        @each $name, $color in $theme {
+            &-#{$name} {
+                border-color: $color;
+                color: $color;
+                &:hover{
+                    border-color: lighten($color, 10%);
+                    background: lighten($color, 10%);
+                    color: $white;
+                }
+            }
+        }
+    }
+}

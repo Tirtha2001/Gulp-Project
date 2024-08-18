@@ -1,0 +1,132 @@
+/** ========= LISTS ========= */
+.list{
+    /** General */
+    &-inline{
+        & > li{
+            display: inline-block;
+            vertical-align: middle;
+            &:not(:last-child){
+                margin-right: 10px;
+            }
+        }
+        &-lg{
+            & > li{
+                &:not(:last-child){
+                    margin-right: 15px;
+                }
+            }
+        }
+        &-xl{
+            & > li{
+                &:not(:last-child){
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    
+    & > li{
+        &:not(:last-child){
+            margin-bottom: 5px;
+        }
+    }
+    &-lg{
+        & > li{
+            &:not(:last-child){
+                margin-bottom: 15px;
+            }
+        }
+    }
+    &-xl{
+        & > li{
+            &:not(:last-child){
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    // Styled
+    &-styled{
+        & > li{
+            position: relative;
+            padding-left: 20px;
+            &::before{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 7px;
+                height: 10px;
+                width: 10px;
+                border-radius: 100%;
+            }
+        }
+        
+        @each $name, $color in $theme {
+            &-#{$name} {
+                & > li{
+                    &::before{
+                        background: $color !important;
+                    }
+                }
+            }
+        }
+    }
+
+    // Ordered
+    &-ordered{
+        counter-reset: count;
+        & > li{
+            list-style: none;
+            position: relative;
+            padding-left: 40px;
+            &::before{
+                counter-increment: count;
+                content: counter(count);
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 30px;
+                width: 30px;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $white;
+            }
+            &:not(:last-child){
+                margin-bottom: 20px;
+            }
+        }
+        
+        @each $name, $color in $theme {
+            &-#{$name} {
+                & > li{
+                    &::before{
+                        background: $color !important;
+                    }
+                }
+            }
+        }
+    }
+
+    /** Hover */
+    &-hover{
+        & > li{
+            & > a{
+                display: block;
+            }
+        }        
+        @each $name, $color in $theme {
+            &-#{$name} {
+                & > li{
+                    & > a{
+                        &:hover{                            
+                            color: $color !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

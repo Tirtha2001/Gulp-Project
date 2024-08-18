@@ -1,0 +1,65 @@
+/** ========= TYPOGRAPHY ========= */
+body{
+    font-family: $font;
+    font-weight: 400;
+    font-size: $font;
+    color: $gray-300;
+}
+
+/** Headers */
+
+@for $i from 1 through 6{    
+    h#{$i}{
+        font-size: (45 - ($i * 5)) + px !important;
+    }
+}
+
+h1, h2, h3, h4, h5, h6{
+    line-height: inherit;
+    margin-bottom: 0;
+}
+
+/** General Rules */
+
+p{
+    line-height: inherit;
+    margin-bottom: 0;
+    &:not(:last-child){
+        margin-bottom: 10px;
+    }
+}
+
+.font{
+    &-sm{
+        font-size: 12px !important;
+        line-height: 20px;
+    }
+    &-md{
+        font-size: 17px !important;
+        line-height: 25px;
+    }
+    &-lg{
+        font-size: 20px !important;
+        line-height: 28px;
+    }
+    &-xl{
+        font-size: 25px !important;
+        line-height: 33px;
+    }
+}
+
+.normal{
+    font-weight: 400;
+}
+.semibold{
+    font-weight: 500;
+}
+.bold{
+    font-weight: 600;
+}
+.bolder{
+    font-weight: 800;
+}
+.boldest{
+    font-weight: 900;
+}

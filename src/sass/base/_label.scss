@@ -1,0 +1,15 @@
+.label{
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 5px;
+    font-size: 13px;
+    line-height: normal;
+    padding: 5px 10px;
+    color: $white;
+    @each $name, $color in $theme {
+        &-#{$name} {
+            background: $color !important;
+        }
+    }
+    
+}

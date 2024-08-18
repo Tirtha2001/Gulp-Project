@@ -1,0 +1,53 @@
+/** ========= WRAPPER ========= */
+.main-content{
+    margin-top: $header;
+}
+
+.content{
+    margin-top: $header;
+    margin-left: $sidebar;
+    margin-right: $marketPlace;
+
+    &-full{
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    @include responsive(phone){
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.sidebar{
+    position: fixed;
+    left: 0;
+    top: $header;
+    bottom: 0;
+    background: $white;
+    overflow: auto;
+    width: $sidebar;
+    box-shadow: 0px 0px 10px rgba(120, 130, 140, 0.13);
+    transition: 0.25s all ease;
+    & > .side-nav{
+        display: none;
+    }
+    &.active{
+        transform: translateX(0);
+    }  
+    @include responsive(phone){
+        transition: 0.25s all ease;
+        & > .side-nav{
+            display: block;
+        }
+        transform: translateX(-100%);
+
+    }
+    &-rt{
+        right: 0;
+        left: unset;
+        @include responsive(phone){
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+/** ========= NAVIGATION ========= */
+.navigation{
+    &-list{
+        & > li{
+            display: inline-block;
+            vertical-align: middle;
+            &:not(:last-child){
+                margin-right: 15px;
+            }
+            & > a{
+                &:hover{
+                    color: $primary;
+                }
+            }
+        }
+    }
+}

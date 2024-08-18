@@ -1,0 +1,76 @@
+
+    // =========  Media Queries  =========
+@import "./variables";
+
+@mixin responsive($breakpoint){
+    // Phone Small
+    @if $breakpoint == phone-sm{
+        @media only screen and (max-width : 22.5em){ @content}; //360px
+    }
+    // Phone Medium
+    @if $breakpoint == phone-md{
+        @media only screen and (max-width : 28.25em){ @content}; //452px
+    }
+    // Phone
+    @if $breakpoint == phone{
+        @media only screen and (max-width : 37.5em){ @content}; //600px
+    }
+    // Tablet Portrait
+    @if $breakpoint == tab-port{
+        @media only screen and (max-width : 56.25em){ @content}; //900px
+    }
+    // Tablet Landscape
+    @if $breakpoint == tab-land{
+        @media only screen and (max-width : 75em){ @content}; //1200px
+    }
+    // Big Desktop
+    @if $breakpoint == big-desktop{
+        @media only screen and (min-width : 112.5em){ @content}; //1800px
+    }
+}
+
+
+// Clearfix
+@mixin clearfix{
+    &::after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+// Centering element Vertically and Horizontally
+@mixin centered{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+@mixin vCentered{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@mixin hCentered{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+// Color Map
+$theme: () !default;
+$theme: map-merge((
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "danger": $danger,
+    "warning": $warning,
+    "black": $black,
+    "white": $white,
+    "gray-100": $gray-100,
+    "gray-200": $gray-200,
+    "gray-300": $gray-300,
+    "gray-400": $gray-400,
+    "gray-500": $gray-500
+), $theme);
